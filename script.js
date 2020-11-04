@@ -7,7 +7,6 @@ const characterDropdownButton = document.querySelector(".dropdown");
 const quoteArea = document.querySelector(".js-quote");
 
 // .js-quote is the div where the quote will be displayed
-
 fetch(
 	"https://cors-anywhere.herokuapp.com/https://dark-api.herokuapp.com/api/v1/quote"
 )
@@ -34,7 +33,6 @@ fetch(
 	});
 
 // .js-character is the div where the character data will be displayed
-
 fetch(
 	"https://cors-anywhere.herokuapp.com/https://dark-api.herokuapp.com/api/v1/character"
 )
@@ -48,7 +46,9 @@ fetch(
 	.then((jsonData) => {
 		console.log("jsonData", jsonData);
 
-		randomButton.addEventListener("click", function () {
+		characterDropdownButton.addEventListener("click", function () {
+			//populate dropdown with character list
+
 			const object =
 				jsonData[Math.floor(Math.random() * jsonData.length)];
 			const author = object.author;
