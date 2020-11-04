@@ -89,13 +89,7 @@ footer {
 	padding: 10px;
 	margin: 10px 10px;
 }
-/* 
-option {
-	background-color: black;
-	color: white;
-}
 
 select {
-	background-color: black;
-	color: white;
-} */
+	cursor: pointer;
+}
