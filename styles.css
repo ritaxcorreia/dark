@@ -38,6 +38,7 @@ footer {
 	width: 100%;
 	text-align: center;
 	bottom: 0;
+	margin-top: 50px;
 }
 
 #footer-text {
@@ -49,4 +50,39 @@ footer {
 	height: 3px;
 	margin: auto;
 	background-color: black;
+}
+
+.dropdown {
+	font-family: "Noto Serif", serif;
+	width: 200px;
+	height: 40px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.random-button {
+	font-family: "Noto Serif", serif;
+	background-color: black;
+	color: white;
+	border: none;
+	width: 200px;
+	height: 40px;
+	cursor: pointer;
+}
+
+.choose-quote {
+	text-align: center;
+	padding: 30px;
+}
+
+.choose-character {
+	text-align: center;
+	padding: 30px;
+}
+
+.quote-class {
+	background-color: black;
+	color: white;
+	padding: 10px;
+	margin: 10px 10px;
 }
