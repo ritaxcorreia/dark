@@ -59,7 +59,9 @@ footer {
 	height: 40px;
 	cursor: pointer;
 	text-align: center;
-
+	/* background-color: black;
+	color: white; */
+}
 
 .random-button {
 	font-family: "Noto Serif", serif;
