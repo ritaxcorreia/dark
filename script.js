@@ -79,7 +79,9 @@ fetch(
             <p> ${name}</p>
             <br>
             <h2>Aliases:</h2> 
-            <p>${aliases}</p><br><h2>Portrayed by:</h2> <p>${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}</p><br><h2>Occupation:</h2> <p>${occupation}</p>`;
+            <p>${aliases}</p><br><h2>Portrayed by:</h2>
+            <p>${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}</p>
+            <h2>Occupation:</h2> <p>${occupation}</p>`;
 		});
 	});
 
