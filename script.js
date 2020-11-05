@@ -65,17 +65,21 @@ fetch(
 
 			console.log(selectedCharacter);
 
-			const name = characterData[selectedCharacter].name;
-			const image = characterData[selectedCharacter].img;
-			const aliases = characterData[selectedCharacter].aliases;
-			const portrayedYoung =
-				characterData[selectedCharacter].portrayed.Young;
-			const portrayedAdult =
-				characterData[selectedCharacter].portrayed.Adult;
-			const portrayedOld = characterData[selectedCharacter].portrayed.Old;
-			const occupation = characterData[selectedCharacter].occupation;
+			const name = selectedCharacter.name;
+			const image = selectedCharacter.img;
+			const aliases = selectedCharacter.aliases;
+			const portrayedYoung = selectedCharacter.portrayed.Young;
+			const portrayedAdult = selectedCharacter.portrayed.Adult;
+			const portrayedOld = selectedCharacter.portrayed.Old;
+			const occupation = selectedCharacter.occupation;
 			characterArea.classList.add("quote-class");
-			characterArea.innerHTML = `<img class="character-image" src="${image}"><h2>Name:</h2><p> ${name}</p><br><h2>Aliases:</h2> <p>${aliases}</p><br><h2>Portrayed by:</h2> <p>${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}</p><br><h2>Occupation:</h2> <p>${occupation}</p>`;
+			characterArea.innerHTML = `
+            <img class="character-image" src="${image}">
+            <h2>Name:</h2>
+            <p> ${name}</p>
+            <br>
+            <h2>Aliases:</h2> 
+            <p>${aliases}</p><br><h2>Portrayed by:</h2> <p>${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}</p><br><h2>Occupation:</h2> <p>${occupation}</p>`;
 		});
 	});
 
