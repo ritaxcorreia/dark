@@ -22,11 +22,11 @@ fetch(
 		return response.json();
 	})
 	.then(function (data) {
-		console.log("data", data);
+		console.table(data);
 		// store character list for later use
 		const characterData = data;
 
-		// Create an <option> for every breed
+		// Create an <option> for every character object
 		characterData.forEach(function (object) {
 			const optionElement = document.createElement("option");
 			const name = object.name;
@@ -37,22 +37,43 @@ fetch(
 
 		//  .js-character is the div where the character data will be displayed
 		selectElement.addEventListener("change", function (event) {
-			const characterChosen = event.target.value;
-			console.log(characterChosen);
+			// the selected option "value" attribute is always a string
+			// char_id is a number so we have to convert the value to a number
+			// this is so that we can find the character for the selected char id
+			const selectedCharId = parseInt(event.target.value);
+			console.log(selectedCharId);
 
-			const foundCharacter = data.find(
-				(element) => (element = characterChosen)
-			);
+			// next, let's find the character in the characters array
 
-			console.log(foundCharacter);
+			// how can we find it?
+			// - we have the selected char_id in selectedCharId
+			// - each character in characterData has a char_id
+			// - we can get the correct character by comparing the selected char_id to the character char_id
 
-			const name = foundCharacter.name;
-			const image = foundCharacter.img;
-			const aliases = foundCharacter.aliases;
-			const portrayedYoung = foundCharacter.portrayed.Young;
-			const portrayedAdult = foundCharacter.portrayed.Adult;
-			const portrayedOld = foundCharacter.portrayed.Old;
-			const occupation = foundCharacter.occupation;
+			const selectedCharacter = characterData.find(function (character) {
+				// if this is true, then it returns this specific character and stores it in the const character
+				return character.char_id === selectedCharId;
+			});
+
+			// for (let i = 0; i < characterData.length; i++) {
+			// 	const item = characterData[i];
+
+			// 	if (item.char_id === selectedCharId) {
+			// 		selectedCharacterFor = item;
+			// 	}
+			// }
+
+			console.log(selectedCharacter);
+
+			const name = characterData[selectedCharacter].name;
+			const image = characterData[selectedCharacter].img;
+			const aliases = characterData[selectedCharacter].aliases;
+			const portrayedYoung =
+				characterData[selectedCharacter].portrayed.Young;
+			const portrayedAdult =
+				characterData[selectedCharacter].portrayed.Adult;
+			const portrayedOld = characterData[selectedCharacter].portrayed.Old;
+			const occupation = characterData[selectedCharacter].occupation;
 			characterArea.classList.add("quote-class");
 			characterArea.innerHTML = `<img class="character-image" src="${image}"><h2>Name:</h2><p> ${name}</p><br><h2>Aliases:</h2> <p>${aliases}</p><br><h2>Portrayed by:</h2> <p>${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}</p><br><h2>Occupation:</h2> <p>${occupation}</p>`;
 		});
