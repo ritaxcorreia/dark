@@ -93,3 +93,9 @@ footer {
 select {
 	cursor: pointer;
 }
+
+.character-image {
+	width: 100%;
+	max-width: 300px;
+	padding-top: 10px;
+}
