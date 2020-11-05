@@ -10,6 +10,7 @@ const characterArea = document.querySelector(".js-character");
 
 const selectElement = document.querySelector("#characters");
 
+//Choose a character dropdown
 fetch(
 	"https://cors-anywhere.herokuapp.com/https://dark-api.herokuapp.com/api/v1/character"
 )
@@ -46,16 +47,18 @@ fetch(
 			console.log(foundCharacter);
 
 			const name = foundCharacter.name;
+			const image = foundCharacter.img;
 			const aliases = foundCharacter.aliases;
 			const portrayedYoung = foundCharacter.portrayed.Young;
 			const portrayedAdult = foundCharacter.portrayed.Adult;
 			const portrayedOld = foundCharacter.portrayed.Old;
 			const occupation = foundCharacter.occupation;
 			characterArea.classList.add("quote-class");
-			characterArea.innerHTML = `<h2>Name:</h2> ${name}<br><h2>Aliases:</h2> ${aliases}<br><h2>Portrayed by:</h2> ${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}<br><h2>Occupation:</h2> ${occupation}`;
+			characterArea.innerHTML = `<img class="character-image" src="${image}"><h2>Name:</h2><p> ${name}</p><br><h2>Aliases:</h2> <p>${aliases}</p><br><h2>Portrayed by:</h2> <p>${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}</p><br><h2>Occupation:</h2> <p>${occupation}</p>`;
 		});
 	});
 
+//Get a random Dark quote
 // .js-quote is the div where the quote will be displayed
 fetch(
 	"https://cors-anywhere.herokuapp.com/https://dark-api.herokuapp.com/api/v1/quote"
