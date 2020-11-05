@@ -58,17 +58,18 @@ fetch(
 			selectElement.appendChild(optionElement);
 		});
 
-		characterDropdownButton.addEventListener("click", function () {
-			// const aliases = jsonData.aliases;
-			// const portrayedYoung = jsonData.portrayed.Young;
-			// const portrayedAdult = jsonData.portrayed.Adult;
-			// const portrayedOld = jsonData.portrayed.Old;
-			// const occupation = jsonData.occupation;
-			// characterArea.classList.add("quote-class");
-			// characterArea.innerHTML = `<h2>Name:</h2> ${name}<br><h2>Aliases:</h2> ${aliases}<br><h2>Portrayed by:</h2> ${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}<br><h2>Occupation:</h2> ${ocupation}`;
+		// when user selects option from dropdown menu
+		selectElement.addEventListener("change", function (characterChoice) {
+			const characterChosen = characterChoice.target.name;
+			console.log(characterChosen);
+
+			const name = jsonData.name;
+			const aliases = jsonData.aliases;
+			const portrayedYoung = jsonData.portrayed.Young;
+			const portrayedAdult = jsonData.portrayed.Adult;
+			const portrayedOld = jsonData.portrayed.Old;
+			const occupation = jsonData.occupation;
+			characterArea.classList.add("quote-class");
+			characterArea.innerHTML = `<h2>Name:</h2> ${name}<br><h2>Aliases:</h2> ${aliases}<br><h2>Portrayed by:</h2> ${portrayedYoung}, ${portrayedAdult}, ${portrayedOld}<br><h2>Occupation:</h2> ${occupation}`;
 		});
 	});
-
-{
-	/* <option value="character-name"></option>; */
-}
